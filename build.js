@@ -1,13 +1,13 @@
 const { build } = require("esbuild");
 const { Generator } = require("npm-dts");
-const { dependencies, peerDependencies } = require("./package.json");
+const { dependencies } = require("./package.json");
 
-const entryFile = "src/index.ts";
+const entryFile = ["lib/index.ts"];
 
 const shared = {
-  entryPoints: [entryFile],
+  entryPoints: entryFile,
   bundle: true,
-  external: Object.keys(dependencies).concat(Object.keys(peerDependencies)),
+  external: Object.keys(dependencies),
 };
 
 build({
