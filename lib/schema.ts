@@ -1,9 +1,6 @@
-import Ajv from "ajv";
 import S from "fluent-json-schema";
 
-const ajv = new Ajv({ allErrors: true });
-
-const schema = S.object()
+export const schema = S.object()
   .prop("uuid", S.string().required())
   .prop("enabled", S.boolean().required())
   .prop("name", S.string().required())
@@ -29,6 +26,7 @@ const schema = S.object()
       S.object().prop("enabled", S.boolean().required())
     )
   )
+  .prop("utm", S.object().required())
   .prop("createdAt", S.string().required())
   .prop("updatedAt", S.string().required())
   .prop(
@@ -41,5 +39,3 @@ const schema = S.object()
         .prop("expirationDate", S.mixed(["string", "number"]).required())
     )
   );
-
-export const validate = ajv.compile(schema.valueOf());
