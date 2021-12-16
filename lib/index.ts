@@ -14,12 +14,12 @@ const EcommerceValidator = () => ({
   },
 });
 
-export function EcommerceReplication(
+export function EcommerceReplicator(
   client: ServiceBusSender,
   sendEcommerce = send
 ) {
   return {
-    async sender(ecommerce: Ecommerce) {
+    async send(ecommerce: Ecommerce) {
       const [isValid, errors] = EcommerceValidator().validate(ecommerce);
 
       if (!isValid)
