@@ -5,7 +5,6 @@
   "scripts": {
     "build": "node build.js",
     "prepare": "npm run build",
-    "prepack": "yarn build",
     "test": "tap --ts"
   },
   "module": "dist/index.esm.js",
