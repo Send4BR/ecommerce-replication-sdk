@@ -18,6 +18,10 @@ export const schema = S.object()
       .prop("connectorUrl", S.string().required())
       .prop("connectorFields", S.object().required())
   )
+  .prop(
+    "channels",
+    S.array().items(S.object().prop("id", S.string()).prop("data", S.object()))
+  )
   .prop("features", S.array().items(S.string()))
   .prop(
     "featureSettings",

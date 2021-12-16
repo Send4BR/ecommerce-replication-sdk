@@ -7,7 +7,7 @@ export type Ecommerce = {
   logoUrl: string;
   email: string;
   confirmationType: string;
-  channels: { id: string; primary: boolean; data: any }[];
+  channels: { id: string; data: Record<string, unknown> }[];
   integration: Record<string, unknown>;
   features: string[];
   featureSettings: { loyalty: { enabled: boolean } };
