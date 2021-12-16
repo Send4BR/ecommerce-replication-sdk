@@ -1,6 +1,6 @@
 import tap from "tap";
 import type { ServiceBusSender } from "@azure/service-bus";
-import { EcommerceReplicator } from "../lib/index";
+import { EcommerceReplicator } from "../lib/main";
 import ecommerceMock from "../lib/__mocks__/ecommerce-mock";
 
 const client = {} as ServiceBusSender;
