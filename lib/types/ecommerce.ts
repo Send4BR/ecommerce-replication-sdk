@@ -10,7 +10,7 @@ export type Ecommerce = {
   channels: { id: string; data: Record<string, unknown> }[];
   integration: Record<string, unknown>;
   features: string[];
-  featureSettings: { loyalty: { enabled: boolean } };
+  featureSettings: Record<string, unknown>;
   utm: Record<string, string>;
   createdAt: string;
   updatedAt: string;
