@@ -1,4 +1,4 @@
-import { ServiceBusMessage, ServiceBusSender } from "@azure/service-bus";
+import type { ServiceBusMessage, ServiceBusSender } from "@azure/service-bus";
 import tap from "tap";
 import { send } from "../lib/send";
 import ecommerceMock from "../lib/__mocks__/ecommerce-mock";
