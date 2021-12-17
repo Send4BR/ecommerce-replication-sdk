@@ -27,3 +27,7 @@ await EcommerceReplicator(client).send(ecommercePayload);
 ```
 npm test
 ```
+
+### Desenvolvimento
+
+Caso modifique algo no projeto, não se esqueça de rodar o build antes de subir para o github para atualizar a `dist`

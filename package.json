@@ -4,7 +4,6 @@
   "description": "aftersale ecommerce replication sdk integration",
   "scripts": {
     "build": "node build.js",
-    "prepare": "npm run build",
     "test": "tap --ts"
   },
   "module": "dist/index.esm.js",
