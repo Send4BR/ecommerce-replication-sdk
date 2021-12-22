@@ -91,7 +91,7 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/types/ecommerce' {
           isActive: boolean;
           name: string;
           rules: string;
-          expirationDate: string | number;
+          expirationDate: string | number | Date;
       }[];
   };
 
