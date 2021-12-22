@@ -18,6 +18,6 @@ export type Ecommerce = {
     isActive: boolean;
     name: string;
     rules: string;
-    expirationDate: string | number;
+    expirationDate: string | number | Date;
   }[];
 };
