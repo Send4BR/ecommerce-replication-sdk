@@ -40,6 +40,6 @@ export const schema = S.object()
         .prop("isActive", S.boolean().required())
         .prop("name", S.string().required())
         .prop("rules", S.string().required())
-        .prop("expirationDate", S.mixed(["string", "number"]).required())
+        .prop("expirationDate", S.string().required())
     )
   );
