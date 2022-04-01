@@ -20,4 +20,27 @@ export type Ecommerce = {
     rules: string;
     expirationDate: string | number | Date;
   }[];
+  notifications: number[];
+  demo: boolean;
+  couriers: {
+    id: string;
+    enabled: boolean;
+    courierUrl: string | null;
+    connectorUrl: string | null;
+    customNames: string[];
+    authFields?: Record<string, unknown>;
+  }[];
+  mappedEcommerceStatuses: Record<string, string>;
+  messsages: Record<
+    'courier' | 'system' | 'platform',
+    {
+      id: number;
+      isCustomizable: boolean;
+      title: string;
+      customDetail: string | null;
+      description: string | null;
+      actionIds: number[];
+      tags: string[];
+    }[]
+  >;
 };
