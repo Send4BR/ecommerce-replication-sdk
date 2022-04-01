@@ -18,8 +18,8 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
           connectorUrl: string;
           connectorFields: {
               Url: string;
-              "Any-Key": string;
-              "Any-Token": string;
+              'Any-Key': string;
+              'Any-Token': string;
           };
       };
       features: string[];
@@ -38,6 +38,58 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
           isActive: boolean;
       }[];
       utm: {};
+      notifications: number[];
+      demo: boolean;
+      couriers: {
+          id: string;
+          enabled: boolean;
+          customNames: string[];
+          courierUrl: null;
+          connectorUrl: string;
+      }[];
+      mappedEcommerceStatuses: {
+          'payment-pending': string;
+          'payment-approved': string;
+          'window-to-cancel': string;
+          handling: string;
+          'payment-denied': string;
+          invoiced: string;
+          invoice: string;
+          canceled: string;
+          cancel: string;
+      };
+      messages: {
+          courier: {
+              id: number;
+              isCustomizable: boolean;
+              title: string;
+              detail: string;
+              customDetail: null;
+              description: null;
+              actionIds: number[];
+              tags: never[];
+          }[];
+          platform: {
+              id: number;
+              isCustomizable: boolean;
+              title: string;
+              detail: string;
+              customDetail: null;
+              description: null;
+              actionIds: never[];
+              tags: never[];
+          }[];
+          system: {
+              id: number;
+              isCustomizable: boolean;
+              title: string;
+              detail: null;
+              customDetail: null;
+              description: null;
+              actionIds: number[];
+              tags: never[];
+          }[];
+      };
   };
   export default _default;
 
@@ -93,6 +145,26 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/types/ecommerce' {
           rules: string;
           expirationDate: string | number | Date;
       }[];
+      notifications: number[];
+      demo: boolean;
+      couriers: {
+          id: string;
+          enabled: boolean;
+          courierUrl: string | null;
+          connectorUrl: string | null;
+          customNames: string[];
+          authFields?: Record<string, unknown>;
+      }[];
+      mappedEcommerceStatuses: Record<string, string>;
+      messages: Record<'courier' | 'system' | 'platform', {
+          id: number;
+          isCustomizable: boolean;
+          title: string;
+          customDetail: string | null;
+          description: string | null;
+          actionIds: number[];
+          tags: string[];
+      }[]>;
   };
 
 }
