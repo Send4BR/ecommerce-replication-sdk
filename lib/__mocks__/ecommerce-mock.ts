@@ -19,7 +19,6 @@ export default {
   },
   features: ['feature'],
   logoUrl: 'https://send4.blob.core.windows.net/send4sprint/ecommerces/aftersale.png',
-
   createdAt: '2021-12-16T14:11:36.320Z',
   updatedAt: '2021-12-16T14:11:36.320Z',
   featureSettings: { loyalty: { enabled: true } },

@@ -31,7 +31,7 @@ export type Ecommerce = {
     authFields?: Record<string, unknown>;
   }[];
   mappedEcommerceStatuses: Record<string, string>;
-  messsages: Record<
+  messages: Record<
     'courier' | 'system' | 'platform',
     {
       id: number;
