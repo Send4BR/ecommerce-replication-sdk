@@ -6,8 +6,14 @@ export type Ecommerce = {
   trackingUrl: string;
   logoUrl: string;
   email: string;
+  handling: number;
+  picking: number;
   confirmationType: string;
-  channels: { id: string; data: Record<string, unknown> }[];
+  channels: {
+    id: string;
+    primary: boolean;
+    data: Record<string, unknown>;
+  }[];
   integration: Record<string, unknown>;
   features: string[];
   featureSettings: Record<string, unknown>;
@@ -28,6 +34,7 @@ export type Ecommerce = {
     courierUrl: string | null;
     connectorUrl: string | null;
     customNames: string[];
+    sacMail?: string | null;
     authFields?: Record<string, unknown>;
   }[];
   mappedEcommerceStatuses: Record<string, string>;

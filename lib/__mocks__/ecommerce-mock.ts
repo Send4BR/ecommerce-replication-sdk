@@ -7,6 +7,8 @@ export default {
   email: 'ti@after.sale',
   confirmationType: 'email',
   channels: [{ id: 'sms', primary: true, data: {} }],
+  handling: 20,
+  picking: 10,
   integration: {
     platform: 'vtex',
     origin_domain: 'mockecomm.test',
@@ -37,6 +39,7 @@ export default {
     {
       id: 'correios',
       enabled: true,
+      sacMail: 'email@email.com',
       customNames: ['correios'],
       courierUrl: null,
       connectorUrl: 'http://connector.url',

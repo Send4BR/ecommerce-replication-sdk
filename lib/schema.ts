@@ -27,7 +27,12 @@ export const schema = S.object()
       .prop('connectorUrl', S.string().required())
       .prop('connectorFields', S.object().required())
   )
-  .prop('channels', S.array().items(S.object().prop('id', S.string()).prop('data', S.object())))
+  .prop(
+    'channels',
+    S.array().items(
+      S.object().prop('id', S.string()).prop('primary', S.boolean()).prop('data', S.object())
+    )
+  )
   .prop('features', S.array().items(S.string()))
   .prop(
     'featureSettings',
@@ -48,11 +53,14 @@ export const schema = S.object()
   )
   .prop('notifications', S.array().items(S.number()))
   .prop('demo', S.boolean())
+  .prop('picking', S.number())
+  .prop('handling', S.number())
   .prop(
     'couriers',
     S.array().items(
       S.object()
         .prop('customNames', S.array().items(S.string()))
+        .prop('sacMail', S.anyOf([S.string(), S.null()]))
         .prop('enabled', S.boolean().required())
         .prop('id', S.string().required())
         .prop('courierUrl', S.anyOf([S.string(), S.null()]))
