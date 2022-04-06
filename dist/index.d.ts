@@ -12,6 +12,8 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
           primary: boolean;
           data: {};
       }[];
+      handling: number;
+      picking: number;
       integration: {
           platform: string;
           origin_domain: string;
@@ -43,6 +45,7 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
       couriers: {
           id: string;
           enabled: boolean;
+          sacMail: string;
           customNames: string[];
           courierUrl: null;
           connectorUrl: string;
@@ -128,9 +131,12 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/types/ecommerce' {
       trackingUrl: string;
       logoUrl: string;
       email: string;
+      handling: number;
+      picking: number;
       confirmationType: string;
       channels: {
           id: string;
+          primary: boolean;
           data: Record<string, unknown>;
       }[];
       integration: Record<string, unknown>;
@@ -153,6 +159,7 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/types/ecommerce' {
           courierUrl: string | null;
           connectorUrl: string | null;
           customNames: string[];
+          sacMail?: string | null;
           authFields?: Record<string, unknown>;
       }[];
       mappedEcommerceStatuses: Record<string, string>;
