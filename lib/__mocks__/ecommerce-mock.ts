@@ -24,14 +24,16 @@ export default {
   createdAt: '2021-12-16T14:11:36.320Z',
   updatedAt: '2021-12-16T14:11:36.320Z',
   featureSettings: { loyalty: { enabled: true } },
-  coupons: [
-    {
-      name: '10OFF',
+  coupons: {
+    selected: 'multi',
+    rules: 'CONFIA',
+    isActive: true,
+    items: [{
       expirationDate: '2021-12-16T14:11:36.320Z',
-      rules: 'CONFIA',
-      isActive: true,
-    },
-  ],
+      name: '10OFF',
+      discount: 12
+    }]
+  },
   utm: {},
   notifications: [12],
   demo: true,

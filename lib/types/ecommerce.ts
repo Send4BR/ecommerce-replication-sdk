@@ -21,11 +21,15 @@ export type Ecommerce = {
   createdAt: string;
   updatedAt: string;
   coupons: {
+    selected?: string | null;
+    rules?: string | null;
     isActive: boolean;
-    name: string;
-    rules: string;
-    expirationDate: string | number | Date;
-  }[];
+    items: {
+      name?: string | null;
+      expirationDate?: string | null;
+      discount?: number | null;
+    }[]
+  };
   notifications: number[];
   demo: boolean;
   couriers: {
