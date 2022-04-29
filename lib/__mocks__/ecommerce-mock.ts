@@ -25,13 +25,13 @@ export default {
   updatedAt: '2021-12-16T14:11:36.320Z',
   featureSettings: { loyalty: { enabled: true } },
   coupons: {
-    selected: 'multi',
+    selected: 'unique',
     rules: 'CONFIA',
     isActive: true,
     items: [{
       expirationDate: '2021-12-16T14:11:36.320Z',
       name: '10OFF',
-      discount: 12
+      discount: null
     }]
   },
   utm: {},
