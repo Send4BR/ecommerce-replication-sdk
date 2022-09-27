@@ -19,7 +19,7 @@ export const schema = S.object()
   .prop('email', S.string().required())
   .prop('confirmationType', S.string().required())
   .prop(
-    'integrations',
+    'integration',
     S.object()
       .prop('platform', S.string().required())
       .prop('store_id', S.string().required())
@@ -47,11 +47,15 @@ export const schema = S.object()
       .prop('selected', S.anyOf([S.string(), S.null()]))
       .prop('rules', S.anyOf([S.string(), S.null()]))
       .prop('isActive', S.boolean().required())
-      .prop('items', S.array().items(S.object()
-        .prop('name', S.anyOf([S.string(), S.null()]))
-        .prop('expirationDate', S.anyOf([S.string(), S.null()]))
-        .prop('discount', S.anyOf([S.number(), S.null()]))
-      ))
+      .prop(
+        'items',
+        S.array().items(
+          S.object()
+            .prop('name', S.anyOf([S.string(), S.null()]))
+            .prop('expirationDate', S.anyOf([S.string(), S.null()]))
+            .prop('discount', S.anyOf([S.number(), S.null()]))
+        )
+      )
   )
   .prop('notifications', S.array().items(S.number()))
   .prop('demo', S.boolean())
