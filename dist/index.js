@@ -63,6 +63,7 @@ function EcommerceReplicator(client, sendEcommerce = send) {
       const [isValid, errors] = EcommerceValidator().validate(ecommerce);
       if (!isValid)
         throw new Error(`Ecommerce validation fails, ${JSON.stringify(errors)}`);
+      console.info(`[Replication SDK] Replicating ecommerce ${ecommerce.uuid}`);
       await sendEcommerce({ client, ecommerce });
     }
   };
