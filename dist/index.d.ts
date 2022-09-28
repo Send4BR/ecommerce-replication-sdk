@@ -17,6 +17,7 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
       integration: {
           platform: string;
           origin_domain: string;
+          store_id: null;
           connectorUrl: string;
           connectorFields: {
               Url: string;

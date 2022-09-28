@@ -12,6 +12,7 @@ export default {
   integration: {
     platform: 'vtex',
     origin_domain: 'mockecomm.test',
+    store_id: null,
     connectorUrl: 'https://mockecomm.test',
     connectorFields: {
       Url: 'https://mockecomm.test',
@@ -28,11 +29,13 @@ export default {
     selected: 'unique',
     rules: 'CONFIA',
     isActive: true,
-    items: [{
-      expirationDate: '2021-12-16T14:11:36.320Z',
-      name: '10OFF',
-      discount: null
-    }]
+    items: [
+      {
+        expirationDate: '2021-12-16T14:11:36.320Z',
+        name: '10OFF',
+        discount: null,
+      },
+    ],
   },
   utm: {},
   notifications: [12],
