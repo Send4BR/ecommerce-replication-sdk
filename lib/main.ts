@@ -1,8 +1,8 @@
-import { schema } from "./schema";
-import { send } from "./send";
-import { Ecommerce } from "./types";
-import { ServiceBusSender } from "@azure/service-bus";
-import Ajv from "ajv";
+import { schema } from './schema';
+import { send } from './send';
+import { Ecommerce } from './types';
+import { ServiceBusSender } from '@azure/service-bus';
+import Ajv from 'ajv';
 
 const ajv = new Ajv({ allErrors: true });
 const validator = ajv.compile(schema.valueOf());
@@ -14,19 +14,14 @@ const EcommerceValidator = () => ({
   },
 });
 
-export function EcommerceReplicator(
-  client: ServiceBusSender,
-  sendEcommerce = send
-) {
+export function EcommerceReplicator(client: ServiceBusSender, sendEcommerce = send) {
   return {
     async send(ecommerce: Ecommerce) {
       const [isValid, errors] = EcommerceValidator().validate(ecommerce);
 
-      if (!isValid)
-        throw new Error(
-          `Ecommerce validation fails, ${JSON.stringify(errors)}`
-        );
+      if (!isValid) throw new Error(`Ecommerce validation fails, ${JSON.stringify(errors)}`);
 
+      console.info(`[Replication SDK] Replicating ecommerce ${ecommerce.uuid}`);
       await sendEcommerce({ client, ecommerce });
     },
   };

@@ -17,6 +17,7 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
       integration: {
           platform: string;
           origin_domain: string;
+          store_id: null;
           connectorUrl: string;
           connectorFields: {
               Url: string;
@@ -109,9 +110,9 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/index' {
 
 }
 declare module '@aftersale/ecommerce-replication-sdk/lib/main' {
-  import { send } from "@aftersale/ecommerce-replication-sdk/lib/send";
-  import { Ecommerce } from "@aftersale/ecommerce-replication-sdk/lib/types/index";
-  import { ServiceBusSender } from "@azure/service-bus";
+  import { send } from '@aftersale/ecommerce-replication-sdk/lib/send';
+  import { Ecommerce } from '@aftersale/ecommerce-replication-sdk/lib/types/index';
+  import { ServiceBusSender } from '@azure/service-bus';
   export function EcommerceReplicator(client: ServiceBusSender, sendEcommerce?: typeof send): {
       send(ecommerce: Ecommerce): Promise<void>;
   };
