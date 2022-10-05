@@ -45,7 +45,10 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/__mocks__/ecommerce-moc
           }[];
       };
       utm: {};
-      notifications: number[];
+      notifications: {
+          custom: never[];
+          default: number[];
+      };
       demo: boolean;
       couriers: {
           id: string;
@@ -160,7 +163,10 @@ declare module '@aftersale/ecommerce-replication-sdk/lib/types/ecommerce' {
               discount?: number | null;
           }[];
       };
-      notifications: number[];
+      notifications: {
+          custom: number[];
+          default: number[];
+      };
       demo: boolean;
       couriers: {
           id: string;

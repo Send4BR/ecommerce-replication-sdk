@@ -38,7 +38,7 @@ export default {
     ],
   },
   utm: {},
-  notifications: [12],
+  notifications: { custom: [], default: [12] },
   demo: true,
   couriers: [
     {

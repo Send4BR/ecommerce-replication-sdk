@@ -57,7 +57,12 @@ export const schema = S.object()
         )
       )
   )
-  .prop('notifications', S.array().items(S.number()))
+  .prop(
+    'notifications',
+    S.object()
+      .prop('default', S.array().items(S.number()))
+      .prop('custom', S.array().items(S.number()))
+  )
   .prop('demo', S.boolean())
   .prop('picking', S.number())
   .prop('handling', S.number())

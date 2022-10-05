@@ -28,9 +28,9 @@ export type Ecommerce = {
       name?: string | null;
       expirationDate?: string | null;
       discount?: number | null;
-    }[]
+    }[];
   };
-  notifications: number[];
+  notifications: { custom: number[]; default: number[] };
   demo: boolean;
   couriers: {
     id: string;
